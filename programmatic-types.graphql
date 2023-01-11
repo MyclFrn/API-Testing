@@ -63,6 +63,48 @@ type PaginatorInfo {
 """The `Boolean` scalar type represents `true` or `false`."""
 scalar Boolean
 
+"""Order by clause for Query.posts.orderBy."""
+input QueryPostsOrderByOrderByClause {
+  """The column that is used for ordering."""
+  column: QueryPostsOrderByColumn!
+
+  """The direction that is used for ordering."""
+  order: SortOrder!
+}
+
+"""Allowed column names for Query.posts.orderBy."""
+enum QueryPostsOrderByColumn {
+  CREATED_AT
+  TITLE
+}
+
+"""Directions for ordering a list of records."""
+enum SortOrder {
+  """Sort records in ascending order."""
+  ASC
+
+  """Sort records in descending order."""
+  DESC
+}
+
+"""A paginated list of Post items."""
+type PostPaginator {
+  """Pagination information about the list of items."""
+  paginatorInfo: PaginatorInfo!
+
+  """A list of Post items."""
+  data: [Post!]!
+}
+
+"""A paginated list of Comment items."""
+type CommentPaginator {
+  """Pagination information about the list of items."""
+  paginatorInfo: PaginatorInfo!
+
+  """A list of Comment items."""
+  data: [Comment!]!
+}
+
 """
 The `Float` scalar type represents signed double-precision fractional
 values as specified by
@@ -269,15 +311,6 @@ enum __DirectiveLocation {
 
   """Location adjacent to an input object field definition."""
   INPUT_FIELD_DEFINITION
-}
-
-"""Directions for ordering a list of records."""
-enum SortOrder {
-  """Sort records in ascending order."""
-  ASC
-
-  """Sort records in descending order."""
-  DESC
 }
 
 """
