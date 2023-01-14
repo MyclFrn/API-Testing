@@ -11,13 +11,13 @@
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                                <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
 
                                 <a href="#"
                                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Autores</a>
 
                                 <a href="#"
-                                   class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Discusiones</a>
+                                   class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mis Blog's</a>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                                             id="user-menu" aria-expanded="false" aria-haspopup="true">
                                         <span class="sr-only">Open user menu</span>
                                         <img class="h-8 w-8 rounded-full"
-                                             src="https://ui-avatars.com/api/?background=3A314F&color=fff&name=Michael+Sanchez"
+                                             src="https://ui-avatars.com/api/?background=3A314F&color=fff&name=I"
                                              alt="">
                                     </button>
                                 </div>
@@ -50,8 +50,10 @@
                                     class="origin-top-right absolute hidden group-hover:block right-0 pt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                                     role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
 
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                       role="menuitem">Sign out</a>
+                                    <router-link :to="`/login`">
+                                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Login</a>
+                                    </router-link>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -104,12 +106,12 @@
                     <div class="flex items-center px-5">
                         <div class="flex-shrink-0">
                             <img class="h-10 w-10 rounded-full"
-                                 src="https://ui-avatars.com/api/?name=Wanna+Code"
+                                 src="https://ui-avatars.com/api/?name=I"
                                  alt="">
                         </div>
                         <div class="ml-3">
-                            <div class="text-base font-medium leading-none text-white">Tom Cook</div>
-                            <div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div>
+                            <div class="text-base font-medium leading-none text-white">Invitado</div>
+                            <div class="text-sm font-medium leading-none text-gray-400">invitado@none.com</div>
                         </div>
                         <button
                             class="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -123,8 +125,9 @@
                         </button>
                     </div>
                     <div class="mt-3 px-2 space-y-1">
-                        <a href="#"
-                           class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Sign out</a>
+                        <router-link to="/login">
+                            <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Login</a>
+                        </router-link>
                     </div>
                 </div>
             </div>
